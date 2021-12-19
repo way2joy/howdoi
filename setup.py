@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 #!/usr/bin/env python
 
 import glob
@@ -46,7 +47,7 @@ def read(*names):
         for extension in ('.txt', '.md'):
             filename = name + extension
             if Path(filename).is_file():
-                with open(filename) as in_file:  # pylint: disable=unspecified-encoding
+                with open(filename, 'rt', encoding='utf-8') as in_file:  # pylint: disable=unspecified-encoding
                     value = in_file.read()
                 break
         values[name] = value
